@@ -8,7 +8,7 @@ class DetailedWeatherScreen extends StatelessWidget {
   final String condition;
   final String iconPath;
 
-  DetailedWeatherScreen({
+  const DetailedWeatherScreen({super.key, 
     required this.city,
     required this.temperature,
     required this.highLow,
@@ -22,7 +22,7 @@ class DetailedWeatherScreen extends StatelessWidget {
     String currentDateTime = _getCurrentDateTime();
 
     return Scaffold(
-      backgroundColor: Color(0xFF27275D),
+      backgroundColor: const Color(0xFF27275D),
       body: SafeArea(
         child: Column(
           children: [
@@ -32,22 +32,22 @@ class DetailedWeatherScreen extends StatelessWidget {
               child: Row(
                 children: [
                   IconButton(
-                    icon: Icon(Icons.arrow_back, color: Colors.white),
+                    icon: const Icon(Icons.arrow_back, color: Colors.white),
                     onPressed: () {
                       Navigator.pop(context);
                     },
                   ),
-                  Spacer(),
+                  const Spacer(),
                 ],
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   city,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.white,
                     fontSize: 28,
                     fontWeight: FontWeight.bold,
@@ -55,7 +55,7 @@ class DetailedWeatherScreen extends StatelessWidget {
                 ),
                 Text(
                   temperature,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.white,
                     fontSize: 80,
                     fontWeight: FontWeight.w300,
@@ -63,31 +63,31 @@ class DetailedWeatherScreen extends StatelessWidget {
                 ),
                 Text(
                   condition,
-                  style: TextStyle(color: Colors.white70, fontSize: 20),
+                  style: const TextStyle(color: Colors.white70, fontSize: 20),
                 ),
                 Text(
                   highLow,
-                  style: TextStyle(color: Colors.white54, fontSize: 16),
+                  style: const TextStyle(color: Colors.white54, fontSize: 16),
                 ),
               ],
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Image.network(
               iconPath,
               width: 150,
               height: 150,
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Text(
               currentDateTime,
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.white70,
                 fontSize: 18,
                 fontWeight: FontWeight.w400,
               ),
             ),
-            SizedBox(height: 20),
-            Spacer(),
+            const SizedBox(height: 20),
+            const Spacer(),
           ],
         ),
       ),

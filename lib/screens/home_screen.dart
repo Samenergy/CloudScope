@@ -3,6 +3,8 @@ import './DetailedWeatherScreen.dart';
 import 'weather_service.dart'; 
 
 class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -56,11 +58,11 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF27275D), 
+      backgroundColor: const Color(0xFF27275D), 
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        title: Text(
+        title: const Text(
           'CloudScope',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
@@ -73,16 +75,16 @@ class _HomeScreenState extends State<HomeScreen> {
               controller: searchController,
               decoration: InputDecoration(
                 filled: true,
-                fillColor: Color(0xFF3A3A68),
+                fillColor: const Color(0xFF3A3A68),
                 hintText: 'Search for a city',
-                hintStyle: TextStyle(color: Colors.white54),
-                prefixIcon: Icon(Icons.search, color: Colors.white54),
+                hintStyle: const TextStyle(color: Colors.white54),
+                prefixIcon: const Icon(Icons.search, color: Colors.white54),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(16.0),
                   borderSide: BorderSide.none,
                 ),
               ),
-              style: TextStyle(color: Colors.white), 
+              style: const TextStyle(color: Colors.white), 
               onSubmitted: (value) {
                 if (value.isNotEmpty) {
                   fetchWeatherData(
@@ -90,12 +92,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 }
               },
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             isLoading
-                ? Center(
+                ? const Center(
                     child: CircularProgressIndicator()) 
                 : weatherData.isEmpty
-                    ? Center(
+                    ? const Center(
                         child: Text("No data available",
                             style: TextStyle(color: Colors.white)))
                     : Expanded(
@@ -143,7 +145,7 @@ class WeatherCard extends StatelessWidget {
   final String condition;
   final String iconPath;
 
-  const WeatherCard({
+  const WeatherCard({super.key, 
     required this.city,
     required this.temperature,
     required this.highLow,
@@ -154,12 +156,12 @@ class WeatherCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 16),
+      margin: const EdgeInsets.only(bottom: 16),
       decoration: BoxDecoration(
-        color: Color(0xFF3A3A68),
+        color: const Color(0xFF3A3A68),
         borderRadius: BorderRadius.circular(16.0),
       ),
-      padding: EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(16.0),
       child: Row(
         children: [
           Image.network(
@@ -167,35 +169,35 @@ class WeatherCard extends StatelessWidget {
             width: 50,
             height: 50,
           ),
-          SizedBox(width: 16),
+          const SizedBox(width: 16),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   temperature,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.white,
                     fontSize: 28,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(height: 4),
+                const SizedBox(height: 4),
                 Text(
                   city,
-                  style: TextStyle(color: Colors.white70, fontSize: 16),
+                  style: const TextStyle(color: Colors.white70, fontSize: 16),
                 ),
-                SizedBox(height: 4),
+                const SizedBox(height: 4),
                 Text(
                   condition,
-                  style: TextStyle(color: Colors.white70, fontSize: 14),
+                  style: const TextStyle(color: Colors.white70, fontSize: 14),
                 ),
               ],
             ),
           ),
           Text(
             highLow,
-            style: TextStyle(color: Colors.white54, fontSize: 14),
+            style: const TextStyle(color: Colors.white54, fontSize: 14),
           ),
         ],
       ),
