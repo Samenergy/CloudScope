@@ -57,9 +57,8 @@
 - `lib/`
   - `main.dart`: Entry point of the application.
   - `screens/homescreen.dart`: Contains the home screen UI and logic.
-  - `components/weather_card.dart`: Reusable component for displaying weather data.
   - `screens/detailed_weather_screen.dart`: UI for detailed weather information.
-  - `services/weather_service.dart`: Handles API integration and data fetching.
+  - `screens/weather_service.dart`: Handles API integration and data fetching.
 
 ### **Key Functions:**
 
