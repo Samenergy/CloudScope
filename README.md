@@ -42,14 +42,7 @@
    flutter pub get
    ```
 
-3. **API Key Setup**
-   - Obtain an API key from [OpenWeatherMap](https://openweathermap.org/).
-   - Create a `.env` file in the root directory and add your API key:
-     ```env
-     WEATHER_API_KEY=your_api_key_here
-     ```
-
-4. **Run the App**
+3. **Run the App**
    Use the Flutter CLI to run the app on an emulator or physical device:
    ```bash
    flutter run
